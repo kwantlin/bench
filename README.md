@@ -1,12 +1,10 @@
-# BenchMD: A Benchmark for Unified Learning on Medical Images and Sensors [[ArXiv]](https://arxiv.org/abs/2304.08486)
+# BenchMD: A Benchmark for Unified Learning on Medical Images and Sensors
 
 This repository contains the code for BenchMD, a benchmark for modality-agnostic self-supervised learning on medical image and sensor data. The BenchMD benchmark consists of 19 real-world medical datasets across 7 medical modalities. Models for each modality are first trained on a source dataset, and successful models will achieve high performance when evaluated on out-of-distribution target datasets in the same modality.
 
 <img src="img/benchmd_methods.png" alt="Methods Diagram"/>
 
 The basic components of the benchmark can be found in [datasets](#datasets), [encoders](#encoders), and [algorithms](#pretraining-algorithms). Training is implemented with the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework, logging with [Weights and Biases](https://wandb.ai/), and configuration management with [Hydra](https://hydra.cc/).
-
-BenchMD was built using the [codebase](https://github.com/alextamkin/dabs/) for DABS: A Domain Agnostic Benchmark for Self-Supervised Learning ([DABS](https://arxiv.org/abs/2111.12062), [DABS 2.0](https://openreview.net/pdf?id=ChWf1E43l4)).
 
 <!-- TOC -->
 - [Usage](#usage)
@@ -134,21 +132,3 @@ python transfer.py exp.name=test-finetune-small-ptbxl-emix dataset=cpsc ckpt=<pa
 ## Results
 
 <img src="img/benchmd_results.png" alt="Results Table"/>
-
-
-## Bugs or questions?
-Feel free to email Kathryn Wantlin (kw2960@princeton.edu) or open an issue in this repo with any questions related to the code or our paper, and also to let us know if you have updated results!
-
-## Citation
-
-If you are using BenchMD, or are using our code in your research, please cite our paper:
->@misc{wantlin2023benchmd,
-      title={BenchMD: A Benchmark for Modality-Agnostic Learning on Medical Images and Sensors}, 
-      author={Kathryn Wantlin and Chenwei Wu and Shih-Cheng Huang and Oishi Banerjee and Farah Dadabhoy and Veeral Vipin Mehta and Ryan Wonhee Han and Fang Cao and Raja R. Narayan and Errol Colak and Adewole Adamson and Laura Heacock and Geoffrey H. Tison and Alex Tamkin and Pranav Rajpurkar},
-      year={2023},
-      eprint={2304.08486},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-
-
